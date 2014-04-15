@@ -5,7 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>cfg</string>
-		<string>txt</string>
+		<!-- <string>txt</string> -->
 	</array>
 	<key>name</key>
 	<string>Cisco</string>
@@ -19,9 +19,103 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>shutdown</string>
+			<key>name</key>
+			<string>invalid.illegal.cisco</string>
+		</dict>
+
+		<!-- Functions -->
+		<dict>
+			<key>match</key>
 			<string>access-list</string>
 			<key>name</key>
 			<string>support.function.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s*interface </string>
+			<key>name</key>
+			<string>support.function.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>router </string>
+			<key>name</key>
+			<string>support.function.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s*line </string>
+			<key>name</key>
+			<string>support.function.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s*vlan </string>
+			<key>name</key>
+			<string>support.function.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s*policy-map </string>
+			<key>name</key>
+			<string>support.function.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>class </string>
+			<key>name</key>
+			<string>support.function.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>class-map </string>
+			<key>name</key>
+			<string>support.function.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>service-policy </string>
+			<key>name</key>
+			<string>support.function.cisco</string>
+		</dict>
+
+		<!-- unquoted strings -->
+		<dict>
+			<key>match</key>
+			<string>ip address </string>
+			<key>name</key>
+			<string>string.unquoted.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>switchport </string>
+			<key>name</key>
+			<string>string.unquoted.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>channel-group </string>
+			<key>name</key>
+			<string>string.unquoted.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>ip route </string>
+			<key>name</key>
+			<string>string.unquoted.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s*logging </string>
+			<key>name</key>
+			<string>string.unquoted.cisco</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s*snmp-server </string>
+			<key>name</key>
+			<string>string.unquoted.cisco</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -35,6 +129,8 @@
 			<key>name</key>
 			<string>string.unquoted.cisco</string>
 		</dict>
+
+		<!-- constant -->
 		<dict>
 			<key>match</key>
 			<string>deny </string>
@@ -47,6 +143,8 @@
 			<key>name</key>
 			<string>constant.character.escape.cisco</string>
 		</dict>
+
+		<!-- list -->
 		<dict>
 			<key>match</key>
 			<string>object-group</string>
@@ -65,6 +163,8 @@
 			<key>name</key>
 			<string>markup.list.cisco</string>
 		</dict>
+
+		<!-- comment -->
 		<dict>
 			<key>match</key>
 			<string>^[\s]*!(.*)</string>
@@ -73,10 +173,20 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>description</string>
+			<key>name</key>
+			<string>comment.cisco</string>
+		</dict>
+
+		<!-- numerics -->
+		<dict>
+			<key>match</key>
 			<string>static</string>
 			<key>name</key>
 			<string>constant.numeric.cisco</string>
 		</dict>
+
+		<!-- class -->
 		<dict>
 			<key>match</key>
 			<string>tunnel-group</string>
@@ -89,6 +199,8 @@
 			<key>name</key>
 			<string>support.class.cisco</string>
 		</dict>
+
+		<!-- IP Addresses -->
 		<dict>
 			<key>match</key>
 			<string>\d+\.\d+\.\d+\.\d+(/\d{1,2})?</string>
